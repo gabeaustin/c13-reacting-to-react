@@ -1,5 +1,3 @@
-//this one may not be fully fleshed out, just tried to throw together a quick example
-
 import React, { useState, useEffect } from 'react';
 import Greeter from './Greeter';
 

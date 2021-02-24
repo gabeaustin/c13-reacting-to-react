@@ -7,9 +7,11 @@ const App = (props) => {
   const [loaded, setLoaded] = useState(false);
   const [username, setUsername] = useState('');
 
-  //   useEffect(() => {
-  //       setLoaded(!isLoaded);
-  //   }, []);
+  useEffect(() => {
+    if (loaded === false) {
+      setTimeout(() => setLoaded(!loaded), 3000);
+    }
+  }, [loaded]);
 
   let handleClick = () => setLoaded(!loaded);
 
@@ -21,6 +23,7 @@ const App = (props) => {
         <Greeter name="Thomas the Cat" phrase="Ahhhhahahahooowwwww" />
         <input type="text" onChange={(e) => setUsername(e.target.value)} />
         <p>You are logging in as: {username}</p>
+        <p>{props.text}</p>
       </div>
     );
   } else {
